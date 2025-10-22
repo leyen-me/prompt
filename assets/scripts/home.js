@@ -2,6 +2,8 @@
 // 首页逻辑 - 统计数据动画
 // ============================================
 
+import { promptsData } from '../../data/prompts.js';
+
 class HomePage {
   constructor() {
     this.stats = {
@@ -12,37 +14,27 @@ class HomePage {
     this.init();
   }
 
-  async init() {
-    await this.loadData();
+  init() {
+    this.loadData();
     this.setupAnimations();
   }
 
   /**
    * 加载数据
    */
-  async loadData() {
-    try {
-      const response = await fetch('./data/prompts.json');
-      const data = await response.json();
-      
-      // 计算统计数据
-      this.stats.total = data.prompts.length;
-      this.stats.categories = data.categories.length;
-      
-      // 统计标签数量（去重）
-      const allTags = new Set();
-      data.prompts.forEach(prompt => {
-        if (prompt.tags) {
-          prompt.tags.forEach(tag => allTags.add(tag));
-        }
-      });
-      this.stats.tags = allTags.size;
-      
-    } catch (error) {
-      console.error('加载数据失败:', error);
-      // 使用默认值
-      this.stats = { total: 0, categories: 0, tags: 0 };
-    }
+  loadData() {
+    // 计算统计数据
+    this.stats.total = promptsData.prompts.length;
+    this.stats.categories = promptsData.categories.length;
+    
+    // 统计标签数量（去重）
+    const allTags = new Set();
+    promptsData.prompts.forEach(prompt => {
+      if (prompt.tags) {
+        prompt.tags.forEach(tag => allTags.add(tag));
+      }
+    });
+    this.stats.tags = allTags.size;
   }
 
   /**

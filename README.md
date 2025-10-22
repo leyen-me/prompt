@@ -26,15 +26,15 @@ AI Prompt 合集是一个现代化的 AI 提示词展示平台，提供优雅的
 
 ### 在线访问
 
-直接访问：[GitHub Pages 地址](https://your-username.github.io/prompt-collection/)
+直接访问：[GitHub Pages 地址](https://github.com/leyen-me/prompt)
 
 ### 本地运行
 
 1. **克隆仓库**
 
 ```bash
-git clone https://github.com/your-username/prompt-collection.git
-cd prompt-collection
+git clone https://github.com/leyen-me/prompt
+cd prompt
 ```
 
 2. **启动本地服务器**
@@ -217,7 +217,7 @@ prompt/
 ## 📮 联系方式
 
 - **Issues**：[GitHub Issues](https://github.com/your-username/prompt-collection/issues)
-- **Email**：your-email@example.com
+- **Email**：672228275@qq.com
 
 ---
 

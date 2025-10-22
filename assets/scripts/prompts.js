@@ -2,6 +2,8 @@
 // Prompts 列表页逻辑
 // ============================================
 
+import { promptsData } from '../../data/prompts.js';
+
 class PromptsPage {
   constructor() {
     this.allPrompts = [];
@@ -15,8 +17,8 @@ class PromptsPage {
     this.init();
   }
 
-  async init() {
-    await this.loadData();
+  init() {
+    this.loadData();
     this.renderCategoryFilters();
     this.setupEventListeners();
     this.applyUrlParams();
@@ -26,16 +28,9 @@ class PromptsPage {
   /**
    * 加载数据
    */
-  async loadData() {
-    try {
-      const response = await fetch('./data/prompts.json');
-      const data = await response.json();
-      this.allPrompts = data.prompts;
-      this.categories = data.categories;
-    } catch (error) {
-      console.error('加载数据失败:', error);
-      Utils.showToast('数据加载失败', 'error');
-    }
+  loadData() {
+    this.allPrompts = promptsData.prompts;
+    this.categories = promptsData.categories;
   }
 
   /**
