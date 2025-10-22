@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="精心整理的 AI Prompt 合集，涵盖设计、开发、写作、营销等领域，助力提升 AI 对话效率">
+  <meta name="keywords" content="AI Prompt, 提示词, ChatGPT, AI 对话, 人工智能">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Prompt 精选合集">
+  <meta property="og:description" content="高质量 AI 提示词库，快速查找和使用">
+  <meta property="og:type" content="website">
+  
+  <title>AI Prompt 精选合集 - 高质量 AI 提示词库</title>
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="./assets/styles/global.css">
+  <link rel="stylesheet" href="./assets/styles/components.css">
+  <link rel="stylesheet" href="./assets/styles/animations.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+</head>
+<body>
+  <!-- 跳转到主内容（可访问性） -->
+  <a href="#main-content" class="skip-to-main">跳转到主内容</a>
+
+  <!-- Header 导航栏 -->
+  <header class="header animate-slide-in-down">
+    <div class="header-content">
+      <a href="./index.html" class="logo">
+        <span class="logo-icon">✨</span>
+        <span>AI Prompt 合集</span>
+      </a>
+      
+      <nav class="nav" role="navigation">
+        <ul class="nav-links">
+          <li><a href="./index.html" class="nav-link active">首页</a></li>
+          <li><a href="./prompts.html" class="nav-link">Prompts</a></li>
+          <li><a href="https://github.com" class="nav-link" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        
+        <button class="theme-toggle" aria-label="切换主题">
+          🌙
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主内容 -->
+  <main id="main-content">
+    <!-- Hero 区域 -->
+    <section class="hero section">
+      <div class="bg-grid"></div>
+      <div class="bg-gradient-radial"></div>
+      
+      <div class="container">
+        <div class="hero-content" style="position: relative; z-index: 1; text-align: center; max-width: 900px; margin: 0 auto;">
+          <h1 class="hero-title animate-fade-in-up" style="margin-bottom: var(--spacing-lg);">
+            精选 AI Prompt 合集
+          </h1>
+          
+          <p class="hero-subtitle animate-fade-in-up delay-100" style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-2xl); line-height: 1.6;">
+            高质量的 AI 提示词库，涵盖设计、开发、写作、营销等多个领域<br>
+            让您的 AI 对话更加高效、专业
+          </p>
+          
+          <div class="hero-actions animate-fade-in-up delay-200" style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+            <a href="./prompts.html" class="btn btn-primary btn-lg">
+              探索 Prompts
+              <span>→</span>
+            </a>
+            <a href="https://github.com" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+              <span>⭐</span>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 特性展示区 -->
+    <section class="features section-sm" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="grid grid-cols-3 gap-lg">
+          <!-- 特性 1 -->
+          <div class="card fade-in-on-scroll" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🔍</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-sm);">智能搜索</h3>
+            <p style="color: var(--color-text-secondary);">
+              支持标题、标签、分类的全文检索，快速定位所需 Prompt
+            </p>
+          </div>
+
+          <!-- 特性 2 -->
+          <div class="card fade-in-on-scroll" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">⭐</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-sm);">高质量 Prompt</h3>
+            <p style="color: var(--color-text-secondary);">
+              精心整理的实用 AI 提示词库，经过实践验证的优质内容
+            </p>
+          </div>
+
+          <!-- 特性 3 -->
+          <div class="card fade-in-on-scroll" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🚀</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-sm);">持续更新</h3>
+            <p style="color: var(--color-text-secondary);">
+              GitHub 开源，欢迎贡献优质 Prompt，共同打造最佳合集
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 统计数据区 -->
+    <section class="stats section">
+      <div class="container">
+        <div class="grid grid-cols-3 gap-xl" style="text-align: center;">
+          <!-- Prompt 总数 -->
+          <div class="stat-card fade-in-on-scroll">
+            <div class="stat-value" id="stat-total" style="font-size: 3rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+              0
+            </div>
+            <div class="stat-label" style="font-size: 1.125rem; color: var(--color-text-secondary);">
+              Prompt 总数
+            </div>
+          </div>
+
+          <!-- 分类数量 -->
+          <div class="stat-card fade-in-on-scroll">
+            <div class="stat-value" id="stat-categories" style="font-size: 3rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+              0
+            </div>
+            <div class="stat-label" style="font-size: 1.125rem; color: var(--color-text-secondary);">
+              分类数量
+            </div>
+          </div>
+
+          <!-- 标签数量 -->
+          <div class="stat-card fade-in-on-scroll">
+            <div class="stat-value" id="stat-tags" style="font-size: 3rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+              0
+            </div>
+            <div class="stat-label" style="font-size: 1.125rem; color: var(--color-text-secondary);">
+              标签数量
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA 区域 -->
+    <section class="cta section" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1)); text-align: center;">
+      <div class="container">
+        <h2 class="fade-in-on-scroll" style="font-size: 2.5rem; margin-bottom: var(--spacing-md);">
+          开始探索 AI Prompts
+        </h2>
+        <p class="fade-in-on-scroll" style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-xl); max-width: 600px; margin-left: auto; margin-right: auto;">
+          浏览精选的 AI 提示词合集，找到适合您的 Prompt，提升 AI 对话效率
+        </p>
+        <a href="./prompts.html" class="btn btn-primary btn-lg fade-in-on-scroll">
+          查看所有 Prompts
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" style="background: var(--color-bg-secondary); padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-md);">
+        <div style="color: var(--color-text-secondary);">
+          © 2025 AI Prompt 合集. 基于开源精神构建.
+        </div>
+        <div style="display: flex; gap: var(--spacing-lg);">
+          <a href="https://github.com" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+          <a href="#" class="nav-link">关于</a>
+          <a href="#" class="nav-link">反馈</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 脚本 -->
+  <script src="./assets/scripts/main.js"></script>
+  <script src="./assets/scripts/home.js"></script>
+</body>
+</html>

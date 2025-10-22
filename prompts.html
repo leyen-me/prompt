@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="浏览所有 AI Prompt，通过搜索和筛选快速找到您需要的提示词">
+  <meta name="keywords" content="AI Prompt, 提示词库, ChatGPT Prompts, AI 对话">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Prompts - 浏览所有提示词">
+  <meta property="og:description" content="搜索、筛选和浏览高质量的 AI Prompts">
+  <meta property="og:type" content="website">
+  
+  <title>AI Prompts - 浏览所有提示词</title>
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="./assets/styles/global.css">
+  <link rel="stylesheet" href="./assets/styles/components.css">
+  <link rel="stylesheet" href="./assets/styles/animations.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  
+  <style>
+    /* 页面特定样式 */
+    .prompts-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .prompts-main {
+      flex: 1;
+      padding-top: var(--spacing-xl);
+      padding-bottom: var(--spacing-4xl);
+    }
+    
+    .filters-section {
+      position: sticky;
+      top: 65px;
+      z-index: 40;
+      background: var(--color-bg);
+      padding: var(--spacing-lg) 0;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .filters-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+    
+    .search-row {
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .search-box-full {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .sort-select {
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: 1rem;
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      color: var(--color-text);
+      cursor: pointer;
+      transition: all var(--transition-base) var(--ease-smooth);
+      font-family: inherit;
+    }
+    
+    .sort-select:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    }
+    
+    .filter-tabs {
+      display: flex;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+      padding: var(--spacing-sm) 0;
+    }
+    
+    .results-info {
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .prompts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .modal-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      padding: var(--spacing-md);
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius-md);
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      font-size: 0.875rem;
+    }
+    
+    .meta-label {
+      color: var(--color-text-tertiary);
+    }
+    
+    .meta-value {
+      color: var(--color-text);
+      font-weight: 500;
+    }
+    
+    .prompt-content-wrapper {
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    
+    .prompt-content {
+      white-space: pre-wrap;
+      line-height: 1.7;
+      color: var(--color-text);
+    }
+    
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    @media (max-width: 768px) {
+      .filters-section {
+        position: static;
+      }
+      
+      .search-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .search-box-full {
+        width: 100%;
+      }
+      
+      .prompts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .modal-meta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="prompts-page">
+  <!-- 跳转到主内容（可访问性） -->
+  <a href="#main-content" class="skip-to-main">跳转到主内容</a>
+
+  <!-- Header 导航栏 -->
+  <header class="header animate-slide-in-down">
+    <div class="header-content">
+      <a href="./index.html" class="logo">
+        <span class="logo-icon">✨</span>
+        <span>AI Prompt 合集</span>
+      </a>
+      
+      <nav class="nav" role="navigation">
+        <ul class="nav-links">
+          <li><a href="./index.html" class="nav-link">首页</a></li>
+          <li><a href="./prompts.html" class="nav-link active">Prompts</a></li>
+          <li><a href="https://github.com" class="nav-link" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        
+        <button class="theme-toggle" aria-label="切换主题">
+          🌙
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主内容 -->
+  <main id="main-content" class="prompts-main">
+    <!-- 搜索与筛选 -->
+    <section class="filters-section">
+      <div class="container">
+        <div class="filters-container">
+          <!-- 搜索栏 -->
+          <div class="search-row">
+            <div class="search-box search-box-full">
+              <span class="search-icon">🔍</span>
+              <input 
+                type="text" 
+                id="search-input"
+                class="search-input" 
+                placeholder="搜索 Prompts（标题、描述、标签）..."
+                aria-label="搜索 Prompts"
+              >
+              <kbd class="search-shortcut">⌘K</kbd>
+            </div>
+            
+            <select id="sort-select" class="sort-select" aria-label="排序方式">
+              <option value="latest">最新创建</option>
+              <option value="updated">最近更新</option>
+              <option value="popular">最受欢迎</option>
+              <option value="alphabetical">字母顺序</option>
+            </select>
+          </div>
+          
+          <!-- 分类筛选 -->
+          <div class="filter-tabs" id="category-filters" role="tablist">
+            <button class="tag active" data-category="all" role="tab" aria-selected="true">
+              全部
+            </button>
+            <!-- 动态生成分类标签 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prompts 列表 -->
+    <div class="container">
+      <!-- 结果信息 -->
+      <div class="results-info" id="results-info">
+        加载中...
+      </div>
+      
+      <!-- Prompts 网格 -->
+      <div class="prompts-grid" id="prompts-grid">
+        <!-- 加载状态 -->
+        <div class="loading">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      
+      <!-- 空状态 -->
+      <div class="empty-state" id="empty-state" style="display: none;">
+        <div class="empty-state-icon">🔍</div>
+        <h3 class="empty-state-title">未找到匹配的 Prompts</h3>
+        <p class="empty-state-description">
+          尝试调整搜索关键词或筛选条件
+        </p>
+        <button class="btn btn-primary" onclick="resetFilters()">
+          重置筛选
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- 详情弹窗（动态生成） -->
+  <div id="modal-container"></div>
+
+  <!-- Footer -->
+  <footer class="footer" style="background: var(--color-bg-secondary); padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-md);">
+        <div style="color: var(--color-text-secondary);">
+          © 2025 AI Prompt 合集. 基于开源精神构建.
+        </div>
+        <div style="display: flex; gap: var(--spacing-lg);">
+          <a href="https://github.com" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+          <a href="#" class="nav-link">关于</a>
+          <a href="#" class="nav-link">反馈</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 脚本 -->
+  <script src="./assets/scripts/main.js"></script>
+  <script src="./assets/scripts/prompts.js"></script>
+</body>
+</html>
