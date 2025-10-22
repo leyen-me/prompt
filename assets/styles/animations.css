@@ -6,6 +6,11 @@
    页面加载动画
    ============================================ */
 
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

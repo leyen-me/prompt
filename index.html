@@ -50,63 +50,88 @@
   <!-- 主内容 -->
   <main id="main-content">
     <!-- Hero 区域 -->
-    <section class="hero section">
-      <div class="bg-grid"></div>
-      <div class="bg-gradient-radial"></div>
+    <section class="hero section" style="position: relative; overflow: hidden;">
+      <!-- 科技感背景装饰 -->
+      <div class="tech-grid"></div>
+      <div class="scan-line"></div>
+      <div class="light-beam" style="left: 20%;"></div>
+      <div class="light-beam" style="left: 80%;"></div>
+      <div class="noise-texture"></div>
       
-      <div class="container">
-        <div class="hero-content" style="position: relative; z-index: 1; text-align: center; max-width: 900px; margin: 0 auto;">
-          <h1 class="hero-title animate-fade-in-up" style="margin-bottom: var(--spacing-lg);">
-            精选 AI Prompt 合集
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="hero-content" style="text-align: center; max-width: 1000px; margin: 0 auto; padding: 120px 0;">
+          <!-- 特殊标记 -->
+          <div class="animate-fade-in" style="display: inline-block; padding: 6px 16px; border: 1px solid var(--color-border-strong); margin-bottom: var(--spacing-xl); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;">
+            AI PROMPT COLLECTION
+          </div>
+          
+          <h1 class="hero-title animate-fade-in-up delay-100" style="margin-bottom: var(--spacing-xl); font-size: 5rem; line-height: 1.1; letter-spacing: -0.03em; font-weight: 800;">
+            高效的 AI 对话<br>
+            <span style="opacity: 0.4;">从精准的 Prompt 开始</span>
           </h1>
           
-          <p class="hero-subtitle animate-fade-in-up delay-100" style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-2xl); line-height: 1.6;">
-            高质量的 AI 提示词库，涵盖设计、开发、写作、营销等多个领域<br>
-            让您的 AI 对话更加高效、专业
+          <p class="hero-subtitle animate-fade-in-up delay-200" style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-3xl); line-height: 1.8; max-width: 700px; margin-left: auto; margin-right: auto;">
+            精选高质量 AI Prompt 合集，涵盖设计、开发、写作等多个领域。<br>
+            让您的 AI 对话更加专业、高效。
           </p>
           
-          <div class="hero-actions animate-fade-in-up delay-200" style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+          <div class="hero-actions animate-fade-in-up delay-300" style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
             <a href="./prompts.html" class="btn btn-primary btn-lg">
-              探索 Prompts
-              <span>→</span>
+              EXPLORE PROMPTS
             </a>
             <a href="https://github.com" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
-              <span>⭐</span>
-              GitHub
+              VIEW ON GITHUB
             </a>
+          </div>
+          
+          <!-- 滚动提示 -->
+          <div class="animate-fade-in delay-500" style="margin-top: var(--spacing-4xl); opacity: 0.3;">
+            <div style="font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: var(--spacing-sm);">
+              SCROLL TO EXPLORE
+            </div>
+            <div style="width: 1px; height: 40px; background: var(--color-text); margin: 0 auto; animation: fadeInOut 2s ease-in-out infinite;"></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 特性展示区 -->
-    <section class="features section-sm" style="background: var(--color-bg-secondary);">
+    <section class="features section" style="background: var(--color-bg-secondary); position: relative;">
       <div class="container">
-        <div class="grid grid-cols-3 gap-lg">
+        <!-- 简洁标题 -->
+        <div style="text-align: center; margin-bottom: var(--spacing-4xl);">
+          <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; opacity: 0.5; margin-bottom: var(--spacing-md);">FEATURES</div>
+          <h2 style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em;">为什么选择我们</h2>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-xl">
           <!-- 特性 1 -->
-          <div class="card fade-in-on-scroll" style="text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🔍</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-sm);">智能搜索</h3>
-            <p style="color: var(--color-text-secondary);">
-              支持标题、标签、分类的全文检索，快速定位所需 Prompt
+          <div class="fade-in-on-scroll" style="text-align: left; padding: var(--spacing-2xl); border: 1px solid var(--color-border); background: var(--color-bg); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.02) 50%); pointer-events: none;"></div>
+            <div style="font-size: 2rem; margin-bottom: var(--spacing-lg); font-weight: 300;">—</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: var(--spacing-md); font-weight: 700; letter-spacing: -0.01em;">智能检索</h3>
+            <p style="color: var(--color-text-secondary); line-height: 1.7; font-size: 0.9375rem;">
+              多维度搜索算法，通过标题、标签、分类精准匹配，瞬间找到所需 Prompt
             </p>
           </div>
 
           <!-- 特性 2 -->
-          <div class="card fade-in-on-scroll" style="text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">⭐</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-sm);">高质量 Prompt</h3>
-            <p style="color: var(--color-text-secondary);">
-              精心整理的实用 AI 提示词库，经过实践验证的优质内容
+          <div class="fade-in-on-scroll" style="text-align: left; padding: var(--spacing-2xl); border: 1px solid var(--color-border); background: var(--color-bg); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.02) 50%); pointer-events: none;"></div>
+            <div style="font-size: 2rem; margin-bottom: var(--spacing-lg); font-weight: 300;">—</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: var(--spacing-md); font-weight: 700; letter-spacing: -0.01em;">专业精选</h3>
+            <p style="color: var(--color-text-secondary); line-height: 1.7; font-size: 0.9375rem;">
+              每个 Prompt 都经过实践验证，确保高质量和实用性，提升你的工作效率
             </p>
           </div>
 
           <!-- 特性 3 -->
-          <div class="card fade-in-on-scroll" style="text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🚀</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-sm);">持续更新</h3>
-            <p style="color: var(--color-text-secondary);">
-              GitHub 开源，欢迎贡献优质 Prompt，共同打造最佳合集
+          <div class="fade-in-on-scroll" style="text-align: left; padding: var(--spacing-2xl); border: 1px solid var(--color-border); background: var(--color-bg); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.02) 50%); pointer-events: none;"></div>
+            <div style="font-size: 2rem; margin-bottom: var(--spacing-lg); font-weight: 300;">—</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: var(--spacing-md); font-weight: 700; letter-spacing: -0.01em;">持续进化</h3>
+            <p style="color: var(--color-text-secondary); line-height: 1.7; font-size: 0.9375rem;">
+              开源协作，社区驱动，不断收录新的优质 Prompt，与 AI 技术同步成长
             </p>
           </div>
         </div>
@@ -114,36 +139,39 @@
     </section>
 
     <!-- 统计数据区 -->
-    <section class="stats section">
+    <section class="stats section" style="position: relative;">
       <div class="container">
         <div class="grid grid-cols-3 gap-xl" style="text-align: center;">
           <!-- Prompt 总数 -->
-          <div class="stat-card fade-in-on-scroll">
-            <div class="stat-value" id="stat-total" style="font-size: 3rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+          <div class="stat-card fade-in-on-scroll" style="padding: var(--spacing-3xl) 0;">
+            <div class="stat-value" id="stat-total" style="font-size: 4rem; font-weight: 900; color: var(--color-text); margin-bottom: var(--spacing-sm); letter-spacing: -0.02em; font-variant-numeric: tabular-nums;">
               0
             </div>
-            <div class="stat-label" style="font-size: 1.125rem; color: var(--color-text-secondary);">
-              Prompt 总数
+            <div style="width: 60px; height: 1px; background: var(--color-text); margin: var(--spacing-md) auto;"></div>
+            <div class="stat-label" style="font-size: 0.75rem; color: var(--color-text-secondary); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;">
+              TOTAL PROMPTS
             </div>
           </div>
 
           <!-- 分类数量 -->
-          <div class="stat-card fade-in-on-scroll">
-            <div class="stat-value" id="stat-categories" style="font-size: 3rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+          <div class="stat-card fade-in-on-scroll" style="padding: var(--spacing-3xl) 0;">
+            <div class="stat-value" id="stat-categories" style="font-size: 4rem; font-weight: 900; color: var(--color-text); margin-bottom: var(--spacing-sm); letter-spacing: -0.02em; font-variant-numeric: tabular-nums;">
               0
             </div>
-            <div class="stat-label" style="font-size: 1.125rem; color: var(--color-text-secondary);">
-              分类数量
+            <div style="width: 60px; height: 1px; background: var(--color-text); margin: var(--spacing-md) auto;"></div>
+            <div class="stat-label" style="font-size: 0.75rem; color: var(--color-text-secondary); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;">
+              CATEGORIES
             </div>
           </div>
 
           <!-- 标签数量 -->
-          <div class="stat-card fade-in-on-scroll">
-            <div class="stat-value" id="stat-tags" style="font-size: 3rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+          <div class="stat-card fade-in-on-scroll" style="padding: var(--spacing-3xl) 0;">
+            <div class="stat-value" id="stat-tags" style="font-size: 4rem; font-weight: 900; color: var(--color-text); margin-bottom: var(--spacing-sm); letter-spacing: -0.02em; font-variant-numeric: tabular-nums;">
               0
             </div>
-            <div class="stat-label" style="font-size: 1.125rem; color: var(--color-text-secondary);">
-              标签数量
+            <div style="width: 60px; height: 1px; background: var(--color-text); margin: var(--spacing-md) auto;"></div>
+            <div class="stat-label" style="font-size: 0.75rem; color: var(--color-text-secondary); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;">
+              UNIQUE TAGS
             </div>
           </div>
         </div>
@@ -151,18 +179,21 @@
     </section>
 
     <!-- CTA 区域 -->
-    <section class="cta section" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1)); text-align: center;">
-      <div class="container">
-        <h2 class="fade-in-on-scroll" style="font-size: 2.5rem; margin-bottom: var(--spacing-md);">
-          开始探索 AI Prompts
-        </h2>
-        <p class="fade-in-on-scroll" style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-xl); max-width: 600px; margin-left: auto; margin-right: auto;">
-          浏览精选的 AI 提示词合集，找到适合您的 Prompt，提升 AI 对话效率
-        </p>
-        <a href="./prompts.html" class="btn btn-primary btn-lg fade-in-on-scroll">
-          查看所有 Prompts
-          <span>→</span>
-        </a>
+    <section class="cta section" style="background: var(--color-text); color: var(--color-bg); text-align: center; position: relative; overflow: hidden;">
+      <div class="tech-grid" style="opacity: 0.1; filter: invert(1);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div style="padding: var(--spacing-3xl) 0;">
+          <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; opacity: 0.5; margin-bottom: var(--spacing-lg);">GET STARTED</div>
+          <h2 class="fade-in-on-scroll" style="font-size: 3rem; margin-bottom: var(--spacing-lg); font-weight: 800; letter-spacing: -0.02em;">
+            开启你的 AI 之旅
+          </h2>
+          <p class="fade-in-on-scroll" style="font-size: 1.125rem; opacity: 0.7; margin-bottom: var(--spacing-2xl); max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+            浏览精选的 AI 提示词合集，找到适合你的 Prompt
+          </p>
+          <a href="./prompts.html" class="btn btn-lg fade-in-on-scroll" style="background: var(--color-bg); color: var(--color-text); border: 1px solid var(--color-bg);">
+            EXPLORE ALL PROMPTS
+          </a>
+        </div>
       </div>
     </section>
   </main>
