@@ -172,10 +172,8 @@ const Utils = {
       bottom: 24px;
       right: 24px;
       padding: 12px 24px;
-      background: ${type === 'success' ? 'var(--color-success)' : 
-                    type === 'error' ? 'var(--color-error)' : 
-                    'var(--color-primary)'};
-      color: white;
+      background: var(--color-text);
+      color: var(--color-bg);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-lg);
       z-index: 10000;
